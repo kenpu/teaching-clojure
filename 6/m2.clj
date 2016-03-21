@@ -6,5 +6,15 @@
       code)
     code))
 
+
 (println (infix (1 + 2)))
-(println (infix (1 + (3 * 5))))
+(println (infix ((1 + 2) * (3 + 4))))
+
+
+(defmacro do-reverse [& args]
+  (let [args (reverse args)]
+    `(do ~@args)))
+
+(do-reverse 
+  (println "world") 
+  (println "hello"))
